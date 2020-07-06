@@ -84,7 +84,8 @@ class ResNetCifar10Trainer(object):
         print('global_step: %d, loss: %f, accuracy: %f, lr: %f' % (
             step, total_loss.numpy(), accuracy.numpy(), lr.numpy()))
 
-        ckpt.save(os.path.join(ckpt_path, PREFIX))
+        if step % 2000 == 0:
+          ckpt.save(os.path.join(ckpt_path, PREFIX))
 
       if step == num_iterations:
         break
