@@ -9,7 +9,7 @@ from model_runners import build_optimizer
 from absl import flags
 from absl import app 
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
+os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 
 
 flags.DEFINE_string('data_path', '/home/micl/xia/dataset/cifar-10-batches-bin/', 
@@ -61,7 +61,7 @@ def main(_):
 
 if __name__ == '__main__':
   physical_devices = tf.config.experimental.list_physical_devices('GPU')
-  tf.config.experimental.set_memory_growth(device=physical_devices[1], enable=True)
+  tf.config.experimental.set_memory_growth(device=physical_devices[0], enable=True)
 
   flags.mark_flag_as_required('data_path')
   app.run(main)
