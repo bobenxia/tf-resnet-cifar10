@@ -9,11 +9,11 @@ from absl import flags
 from absl import app 
 
 
-flags.DEFINE_string('data_path', None, 'The path to the directory containing '
-                    'Cifar10  binary files.')
-flags.DEFINE_string('ckpt_path', '/tmp/resnet/', 'The path to the directory that'
+flags.DEFINE_string('data_path', '/home/micl/xia/deeplearning/cifar-10-batches-py/', 
+                    'The path to the directory containing Cifar10  binary files.')
+flags.DEFINE_string('ckpt_path', '/home/micl/xia/resnet/', 'The path to the directory that'
                     ' checkpoints will be written to or loaded from.')
-flags.DEFINE_string('log_path', '.', 'The path to the directory to which'
+flags.DEFINE_string('log_path', '/home/micl/xia/resnet/log/', 'The path to the directory to which'
                     'tensorboard log files will be written.')
 
 flags.DEFINE_integer('num_layers', 20, 'Number of weighted layers. Valid '
