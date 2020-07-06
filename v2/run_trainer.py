@@ -50,9 +50,10 @@ def main(_):
   optimizer = build_optimizer(init_lr=FLAGS.init_lr, momentum=FLAGS.momentum)
   ckpt = tf.train.Checkpoint(model=model, optimizer=optimizer)
 
-  model.summary()
-
   trainer = ResNetCifar10Trainer(model)
+
+  model.summary()
+  
   trainer.train(dataset, 
                 optimizer, 
                 ckpt, 
