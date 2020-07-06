@@ -1,4 +1,5 @@
 import tensorflow as tf
+import os
 
 from dataset import Cifar10DatasetBuilder
 from dataset import read_data
@@ -7,6 +8,7 @@ from model_runners import ResNetCifar10Evaluator
 from absl import flags
 from absl import app
 
+os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 
 flags.DEFINE_string('data_path', '/home/micl/xia/dataset/cifar-10-batches-bin/', 'The path to the directory containing '
                     'Cifar10  binary files.')
@@ -42,6 +44,9 @@ def main(_):
     print('Eval loss: %s, eval accuracy: %s' % (loss, acc))
 
 if __name__ == '__main__':
+  physical_devices = tf.config.experimental.list_physical_devices('GPU')
+  tf.config.experimental.set_memory_growth(device=physical_devices[0], enable=True)
+
   flags.mark_flag_as_required('data_path')
   flags.mark_flag_as_required('ckpt_path')
 
