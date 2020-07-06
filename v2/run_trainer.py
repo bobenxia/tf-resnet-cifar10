@@ -1,4 +1,5 @@
 import tensorflow as tf
+import os
 
 from dataset import Cifar10DatasetBuilder 
 from dataset import read_data
@@ -7,6 +8,8 @@ from model_runners import ResNetCifar10Trainer
 from model_runners import build_optimizer
 from absl import flags
 from absl import app 
+
+os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
 
 
 flags.DEFINE_string('data_path', '/home/micl/xia/dataset/cifar-10-batches-bin/', 
@@ -57,5 +60,8 @@ def main(_):
                 FLAGS.ckpt_path)
 
 if __name__ == '__main__':
+  physical_devices = tf.config.experimental.list_physical_devices('GPU')
+  tf.config.experimental.set_memory_growth(device=physical_devices[1], enable=True)
+
   flags.mark_flag_as_required('data_path')
   app.run(main)
