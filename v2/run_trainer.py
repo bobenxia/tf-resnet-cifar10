@@ -51,8 +51,6 @@ def main(_):
   ckpt = tf.train.Checkpoint(model=model, optimizer=optimizer)
 
   trainer = ResNetCifar10Trainer(model)
-
-  model.summary()
   
   trainer.train(dataset, 
                 optimizer, 
