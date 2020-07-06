@@ -50,6 +50,8 @@ def main(_):
   optimizer = build_optimizer(init_lr=FLAGS.init_lr, momentum=FLAGS.momentum)
   ckpt = tf.train.Checkpoint(model=model, optimizer=optimizer)
 
+  model.summary()
+
   trainer = ResNetCifar10Trainer(model)
   trainer.train(dataset, 
                 optimizer, 
@@ -57,7 +59,8 @@ def main(_):
                 FLAGS.batch_size, 
                 FLAGS.num_iterations, 
                 FLAGS.log_per_iterations, 
-                FLAGS.ckpt_path)
+                FLAGS.ckpt_path,
+                FLAGS.log_path)
 
 if __name__ == '__main__':
   physical_devices = tf.config.experimental.list_physical_devices('GPU')

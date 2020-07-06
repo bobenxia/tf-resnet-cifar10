@@ -22,7 +22,7 @@ class ResNetCifar10Trainer(object):
             num_iterations, 
             log_per_iterations, 
             ckpt_path,
-            logdir='log'):
+            logdir):
     """Executes training.
 
     Args:
