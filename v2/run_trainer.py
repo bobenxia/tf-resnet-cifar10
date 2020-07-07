@@ -14,7 +14,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 flags.DEFINE_string('data_path', '/home/micl/xia/dataset/cifar-10-batches-bin/', 
                     'The path to the directory containing Cifar10  binary files.')
-flags.DEFINE_string('ckpt_path', '/home/micl/xia/resnet/resnet_20', 'The path to the directory that'
+flags.DEFINE_string('ckpt_path', '/home/micl/xia/resnet/resnet_20_plain', 'The path to the directory that'
                     ' checkpoints will be written to or loaded from.')
 flags.DEFINE_string('log_path', '/home/micl/xia/resnet/log/', 'The path to the directory to which'
                     'tensorboard log files will be written.')

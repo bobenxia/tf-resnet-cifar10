@@ -1,4 +1,4 @@
-# 原始来自：https://github.com/chao-ji/tf-resnet-cifar10，这里只是个人笔记，请不要参考。
+# 原始来自：https://github.com/chao-ji/tf-resnet-cifar10 ，这里只是个人笔记，请不要参考。
 # ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑
 
 
