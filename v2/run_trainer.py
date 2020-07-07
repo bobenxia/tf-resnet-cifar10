@@ -14,7 +14,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 flags.DEFINE_string('data_path', '/home/micl/xia/dataset/cifar-10-batches-bin/', 
                     'The path to the directory containing Cifar10  binary files.')
-flags.DEFINE_string('ckpt_path', '/home/micl/xia/resnet/restnet_20', 'The path to the directory that'
+flags.DEFINE_string('ckpt_path', '/home/micl/xia/resnet/resnet_20', 'The path to the directory that'
                     ' checkpoints will be written to or loaded from.')
 flags.DEFINE_string('log_path', '/home/micl/xia/resnet/log/', 'The path to the directory to which'
                     'tensorboard log files will be written.')
@@ -60,6 +60,7 @@ def main(_):
                 FLAGS.log_per_iterations, 
                 FLAGS.ckpt_path,
                 FLAGS.log_path)
+  
 
 if __name__ == '__main__':
   physical_devices = tf.config.experimental.list_physical_devices('GPU')
