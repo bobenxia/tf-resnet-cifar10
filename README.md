@@ -1,3 +1,7 @@
+# 原始来自：https://github.com/chao-ji/tf-resnet-cifar10，这里只是个人笔记，请不要参考。
+# ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑
+
+
 # ResNet: Classifying CIFAR-10 images 
 
 **Note**: the **v2** directory contains implementation fully compatible with TensorFlow 2.0.
