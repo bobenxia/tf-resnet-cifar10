@@ -22,7 +22,7 @@ flags.DEFINE_string('log_path', '/home/micl/xia/resnet/log/', 'The path to the d
 flags.DEFINE_integer('num_layers', 20, 'Number of weighted layers. Valid '
                      'values: 20, 32, 44, 56, 110')
 flags.DEFINE_integer('batch_size', 128, 'Batch size for training.')
-flags.DEFINE_integer('num_iterations', 32000, 'The num of training iterations.')
+flags.DEFINE_integer('num_iterations', 64000, 'The num of training iterations.')
 flags.DEFINE_integer('log_per_iterations', 200, 'Every N iterations to save '
                      ' checkpoint file and print training metrics.')
 flags.DEFINE_integer('shuffle_buffer_size', 50000, 'The buffer size for '
