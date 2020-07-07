@@ -8,7 +8,7 @@ from model_runners import ResNetCifar10Evaluator
 from absl import flags
 from absl import app
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '1'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 flags.DEFINE_string('data_path', '/home/micl/xia/dataset/cifar-10-batches-bin/', 'The path to the directory containing '
                     'Cifar10  binary files.')
