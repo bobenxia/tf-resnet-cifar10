@@ -8,7 +8,7 @@ class ResNetCifar10(models.Model):
   """ResNet for CIFAR10 dataset."""
   def __init__(self, 
                num_layers, 
-               shortcut_connection=True,
+               shortcut_connection=False,
                weight_decay=2e-4,
                batch_norm_momentum=0.99,
                batch_norm_epsilon=1e-3,

@@ -31,7 +31,7 @@ flags.DEFINE_float('momentum', 0.9, 'Momentum for the momentum optimizer.')
 flags.DEFINE_float('init_lr', 0.1, 'Initial learning rate.')
 flags.DEFINE_float('weight_decay', 2e-4, 'Weight decay for l2 regularization.')
 flags.DEFINE_float('batch_norm_momentum', 0.99, 'Moving average decay.')
-flags.DEFINE_boolean('shortcut_connection', True, 'Whether to add shortcut '
+flags.DEFINE_boolean('shortcut_connection', False, 'Whether to add shortcut '
                      'connection. Defaults to True. False for Plain network.')
 
 FLAGS = flags.FLAGS

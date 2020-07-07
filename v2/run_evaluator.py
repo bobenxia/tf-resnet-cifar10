@@ -16,7 +16,7 @@ flags.DEFINE_string('ckpt_path', '/home/micl/xia/resnet/resnet_20_plain', 'The p
                     ' checkpoint file from which the model will be restored.')
 flags.DEFINE_integer('num_layers', 20, 'Number of weighted layers. Valid '
                      'values: 20, 32, 44, 56, 110')
-flags.DEFINE_boolean('shortcut_connection', True, 'Whether to add shortcut '
+flags.DEFINE_boolean('shortcut_connection', False, 'Whether to add shortcut '
                      'connection. Defaults to True. False for Plain network.')
 
 FLAGS = flags.FLAGS
