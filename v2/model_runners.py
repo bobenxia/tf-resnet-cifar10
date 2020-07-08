@@ -65,6 +65,7 @@ class ResNetCifar10Trainer(object):
       return total_loss, accuracy, step - 1, lr
 
     summary_writer = tf.summary.create_file_writer(logdir)
+    tf.summary.trace_on(profiler=True)
 
     latest_ckpt = tf.train.latest_checkpoint(ckpt_path)
     if latest_ckpt:
@@ -72,6 +73,8 @@ class ResNetCifar10Trainer(object):
       ckpt.restore(latest_ckpt)
     else:
       print('Training from scratch...')
+
+    manager = tf.train.CheckpointManager(ckpt, directory=ckpt_path, max_to_keep=3)
 
     for labels, images in dataset:
       total_loss, accuracy, step, lr = train_step(labels, images)
@@ -84,11 +87,15 @@ class ResNetCifar10Trainer(object):
         print('global_step: %d, loss: %f, accuracy: %f, lr: %f' % (
             step, total_loss.numpy(), accuracy.numpy(), lr.numpy()))
 
-        if step % 2000 == 0:
-          ckpt.save(os.path.join(ckpt_path, PREFIX))
+        if step % 200 == 0:
+          # ckpt.save(os.path.join(ckpt_path, PREFIX))
+          manager.save()
 
       if step == num_iterations:
         break
+    
+    with summary_writer.as_default():
+      tf.summary.trace_export(name="model_trace", step=0, profiler_outdir=logdir)    # 保存Trace信息到文件（可选）
 
 
 class ResNetCifar10Evaluator(object):
@@ -156,7 +163,7 @@ def build_optimizer(init_lr=0.1, momentum=0.9):
     optimizer: an instance of tf.keras.optimizers.SGD.
   """ 
   learning_rate = tf.keras.optimizers.schedules.PiecewiseConstantDecay(
-      [500, 32000, 48000], 
+      [500, 16000, 24000], 
       [init_lr / 10., init_lr, init_lr / 10., init_lr / 100.])
   optimizer = tf.keras.optimizers.SGD(learning_rate, momentum=momentum)
   return optimizer  
