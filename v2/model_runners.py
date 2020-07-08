@@ -82,6 +82,8 @@ class ResNetCifar10Trainer(object):
       with summary_writer.as_default():
         tf.summary.scalar('train_loss', total_loss, step=step)
         tf.summary.scalar('train_accuracy', accuracy, step=step)
+        tf.summary.trace_export(name="model_trace", step=0, profiler_outdir=logdir)    
+        break
 
       if step % log_per_iterations == 0:
         print('global_step: %d, loss: %f, accuracy: %f, lr: %f' % (
@@ -94,8 +96,6 @@ class ResNetCifar10Trainer(object):
       if step == num_iterations:
         break
     
-    with summary_writer.as_default():
-      tf.summary.trace_export(name="model_trace", step=0, profiler_outdir=logdir)    # 保存Trace信息到文件（可选）
 
 
 class ResNetCifar10Evaluator(object):
