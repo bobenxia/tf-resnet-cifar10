@@ -12,9 +12,9 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 flags.DEFINE_string('data_path', '/home/micl/xia/dataset/cifar-10-batches-bin/', 'The path to the directory containing '
                     'Cifar10  binary files.')
-flags.DEFINE_string('ckpt_path', '/home/micl/xia/resnet/resnet_20_plain_32000', 'The path to the'
+flags.DEFINE_string('ckpt_path', '/home/micl/xia/resnet/resnet_56', 'The path to the'
                     ' checkpoint file from which the model will be restored.')
-flags.DEFINE_integer('num_layers', 20, 'Number of weighted layers. Valid '
+flags.DEFINE_integer('num_layers', 56, 'Number of weighted layers. Valid '
                      'values: 20, 32, 44, 56, 110')
 flags.DEFINE_boolean('shortcut_connection', False, 'Whether to add shortcut '
                      'connection. Defaults to True. False for Plain network.')

@@ -14,12 +14,12 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 flags.DEFINE_string('data_path', '/home/micl/xia/dataset/cifar-10-batches-bin/', 
                     'The path to the directory containing Cifar10  binary files.')
-flags.DEFINE_string('ckpt_path', '/home/micl/xia/resnet/resnet_20_plain_32000', 'The path to the directory that'
+flags.DEFINE_string('ckpt_path', '/home/micl/xia/resnet/resnet_56', 'The path to the directory that'
                     ' checkpoints will be written to or loaded from.')
 flags.DEFINE_string('log_path', '/home/micl/xia/resnet/log/', 'The path to the directory to which'
                     'tensorboard log files will be written.')
 
-flags.DEFINE_integer('num_layers', 20, 'Number of weighted layers. Valid '
+flags.DEFINE_integer('num_layers', 56, 'Number of weighted layers. Valid '
                      'values: 20, 32, 44, 56, 110')
 flags.DEFINE_integer('batch_size', 128, 'Batch size for training.')
 flags.DEFINE_integer('num_iterations', 32000, 'The num of training iterations.')
