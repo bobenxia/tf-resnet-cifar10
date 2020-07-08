@@ -65,7 +65,7 @@ class ResNetCifar10Trainer(object):
       return total_loss, accuracy, step - 1, lr
 
     summary_writer = tf.summary.create_file_writer(logdir)
-    tf.summary.trace_on(profiler=True)
+    tf.summary.trace_on(graph=True, profiler=True)
 
     latest_ckpt = tf.train.latest_checkpoint(ckpt_path)
     if latest_ckpt:
